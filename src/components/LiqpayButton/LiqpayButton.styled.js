@@ -7,3 +7,15 @@ export const DivStyled = styled.div`
     text-transform: uppercase;
   }
 `;
+
+
+export const PrivatePage = styled.form`
+  padding: 5px;
+  margin-bottom: 20px;
+
+  background-color: #94eb86;
+
+  p {
+    margin-bottom: 10px;
+  }
+`;
