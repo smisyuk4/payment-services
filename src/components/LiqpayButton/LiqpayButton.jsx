@@ -1,53 +1,57 @@
 import { useEffect, useState } from 'react';
-import { DivStyled, PrivatePage } from './LiqpayButton.styled';
+import { DivStyled, CartValue } from './LiqpayButton.styled';
 import { makeValues } from '../../helpers/liqpay';
 
 export const LiqpayButton = () => {
-  const [payInfo, setPayInfo] = useState({ amount: 1, description: 'test' });
+  const [amount, setAmount] = useState(0);
+  const [description, setDescription] = useState('');
   const [dataBase64, setDataBase64] = useState('');
   const [signatureBase64, setSignatureBase64] = useState('');
 
   useEffect(() => {
     const fu = async () => {
-      const { dataBase64, signatureBase64 } = await makeValues(payInfo);
+      const { dataBase64, signatureBase64 } = await makeValues(
+        amount,
+        description
+      );
       setDataBase64(dataBase64);
       setSignatureBase64(signatureBase64);
     };
 
     fu();
-  }, [payInfo]);
-
-  // const sendMoney = async () => {
-  //   const resultPayment = await axios.post(
-  //     'https://www.liqpay.ua/api/3/checkout',
-  //     {
-  //       data: dataBase64,
-  //       signature: signatureBase64,
-  //     }
-  //     // {
-  //     //   headers: {
-  //     //     'Access-Control-Allow-Origin': '*',
-  //     //   },
-  //     // }
-  //   );
-
-  //   console.log(resultPayment);
-  // };
+  }, [amount, description]);
 
   return (
     <DivStyled>
-      <PrivatePage
+      <p>Кнопка що відкриває окрему сторінку з варіантами оплати</p>
+
+      <CartValue>
+        <input
+          onChange={e => setAmount(prev => e.target.value)}
+          name="amount"
+          type="number"
+          min="1"
+          max="100000"
+          placeholder="Вартість, грн"
+        />
+        <input
+          onChange={e => setDescription(prev => e.target.value)}
+          name="description"
+          type="text"
+          placeholder="Призначення платежу"
+        />
+      </CartValue>
+      <form
         method="POST"
         action="https://www.liqpay.ua/api/3/checkout"
         acceptCharset="utf-8"
         target="blank"
       >
-        <p>Кнопка що відкриває окрему сторінку з варіантами оплати</p>
         <input type="hidden" name="data" value={dataBase64} />
         <input type="hidden" name="signature" value={signatureBase64} />
 
         <button type="submit">Сплатити</button>
-      </PrivatePage>
+      </form>
     </DivStyled>
   );
 };
