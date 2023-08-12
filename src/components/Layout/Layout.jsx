@@ -8,13 +8,28 @@ export const Layout = () => {
     <div>
       <UlStyled>
         <li>
-          <NavLink to="/" aria-label="welcome">
-            Welcome
+          <NavLink to="/" aria-label="home">
+            Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/home" aria-label="home">
-            Home
+          <NavLink to="/monobank" aria-label="monobank">
+            Monobank
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/liqpay" aria-label="liqpay">
+            Liqpay
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/paypal" aria-label="paypal">
+            Liqpay
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/wayforpay" aria-label="wayforpay">
+            wayforpay
           </NavLink>
         </li>
       </UlStyled>

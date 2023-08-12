@@ -1,0 +1,1 @@
+- [wayforpay](https://wayforpay.com/en)
