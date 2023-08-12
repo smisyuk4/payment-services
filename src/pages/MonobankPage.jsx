@@ -1,8 +1,10 @@
+import { Title } from './pagesStyles'
+
 export const MonobankPage = () => {
   return (
-    <div>
-      <h1> MonobankPage</h1>
-    </div>
+    <>
+      <Title> MonobankPage</Title>
+    </>
   );
 };
 

@@ -1,9 +1,13 @@
+import { LiqpayButton } from '../components/LiqpayButton/LiqpayButton';
+import { Title } from './pagesStyles'
+
 export const LiqpayPage = () => {
-    return (
-      <div>
-        <h1> LiqpayPage</h1>
-      </div>
-    );
-  };
-  
-  export default LiqpayPage;
+  return (
+    <>
+      <Title> LiqpayPage</Title>
+      <LiqpayButton />
+    </>
+  );
+};
+
+export default LiqpayPage;
