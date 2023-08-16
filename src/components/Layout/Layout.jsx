@@ -25,12 +25,12 @@ export const Layout = () => {
           </li>
           <li>
             <NavLink to="/paypal" aria-label="paypal">
-              Liqpay
+              Paypal
             </NavLink>
           </li>
           <li>
             <NavLink to="/wayforpay" aria-label="wayforpay">
-              wayforpay
+              Wayforpay
             </NavLink>
           </li>
         </UlStyled>
@@ -38,8 +38,7 @@ export const Layout = () => {
       <main>
         <Suspense fallback={<p>Loading....</p>}>
           <Container>
-
-          <Outlet />
+            <Outlet />
           </Container>
         </Suspense>
       </main>
