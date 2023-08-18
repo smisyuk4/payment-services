@@ -37,7 +37,10 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Build and set env
+        env:
+          VITE_LIQPAY_PRIVATE_KEY: ${{  vars.VITE_LIQPAY_PRIVATE_KEY  }}
+          VITE_LIQPAY_PUBLIC_KEY: ${{  vars.VITE_LIQPAY_PUBLIC_KEY  }}
         run: npm run build
       - name: Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
