@@ -2,6 +2,8 @@ const { VITE_LIQPAY_PRIVATE_KEY, VITE_LIQPAY_PUBLIC_KEY } = import.meta.env;
 import { v4 as uuidv4 } from 'uuid';
 
 export const makeValues = async (amount, description) => {
+  const order_id = uuidv4();
+
   const dataBase64 = btoa(
     JSON.stringify({
       version: '3',
@@ -10,7 +12,7 @@ export const makeValues = async (amount, description) => {
       amount,
       currency: 'UAH',
       description,
-      order_id: uuidv4(),
+      order_id,
     })
   );
 

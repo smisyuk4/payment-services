@@ -70,9 +70,9 @@ export const LiqpayWidget = () => {
   //   setAmount('');
   //   setDescription('');
   // };
-  console.log(statusPayment, resultPayment);
-  console.log('DATA ', dataBase64);
-  console.log('SIGNATURE ', signatureBase64);
+  // console.log(statusPayment, resultPayment);
+  // console.log('DATA ', dataBase64);
+  // console.log('SIGNATURE ', signatureBase64);
   return (
     <DivStyled>
       <p>Widget</p>

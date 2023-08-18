@@ -39,3 +39,4 @@
 # other
 
 - [How can you encode a string to Base64 in JavaScript](https://stackoverflow.com/questions/246801/how-can-you-encode-a-string-to-base64-in-javascript)
+- [Converting HTML string into DOM elements?](https://stackoverflow.com/questions/3103962/converting-html-string-into-dom-elements)
