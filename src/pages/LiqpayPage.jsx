@@ -50,8 +50,6 @@ export const LiqpayPage = () => {
   );
 };
 
-// const MyComponent = ({ children }) => <div>{children}</div>;
-
 const Form = markup => {
   console.log(markup);
   const dataValue =
