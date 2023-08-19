@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const makeValues = async (amount, description) => {
   const order_id = uuidv4();
+  console.log('makeValues order_id =>>>>> ', order_id);
 
   const dataBase64 = btoa(
     JSON.stringify({
