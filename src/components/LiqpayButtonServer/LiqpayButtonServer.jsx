@@ -4,28 +4,10 @@ import axios from 'axios';
 import { DivStyled, FormStyled } from './LiqpayButtonServer.styled';
 
 axios.defaults.baseURL = 'https://payment-server-node.onrender.com';
-const bank = axios.create({
-  baseURL: 'https://www.liqpay.ua/api/3',
-});
-
-const getPaymentWindow = async data => {
-  const response = await axios.post('/pay', data);
-  return response;
-};
 
 const getPaymentSecondWindow = async data => {
-  const response = await axios.post('/pay-button', data);
+  const response = await axios.post('/getParams', data);
   return response;
-};
-
-const config = {
-  headers: {
-    'Access-Control-Allow-Origin': 'http://127.0.0.1:5173',
-    // 'Access-Control-Allow-Headers': 'Content-Type',
-    // 'Content-Type': 'multipart/form-data',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
 };
 
 export const LiqpayButtonServer = () => {
@@ -40,10 +22,7 @@ export const LiqpayButtonServer = () => {
     });
 
     setParams(data.paymentValues);
-    console.log(data);
-
-    const response = await bank.post('/checkout', data.paymentValues, config);
-    console.log(response);
+    console.log(data.paymentValues);
   };
 
   return (
@@ -71,13 +50,13 @@ export const LiqpayButtonServer = () => {
       <button type="button" onClick={send}>
         Перейти до оплати
       </button>
-      {/* {params && <Form params={params} />} */}
+      {params && <Form params={params} />}
     </DivStyled>
   );
 };
 
 const Form = params => {
-  console.log(params);
+  console.log('Form params', params);
 
   return (
     <form
