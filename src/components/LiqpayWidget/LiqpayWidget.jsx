@@ -42,8 +42,6 @@ export const LiqpayWidget = () => {
         embedTo: '#liqpay_checkout',
         language: 'uk',
         mode: 'popup', // embed || popup
-        server_url: 'https://payment-server-node.onrender.com/callback',
-        result_url: 'https://smisyuk4.github.io/payment-services',
       })
         .on('liqpay.callback', function (data) {
           console.log('status ', data.status);

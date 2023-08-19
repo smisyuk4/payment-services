@@ -14,6 +14,8 @@ export const makeValues = async (amount, description) => {
       currency: 'UAH',
       description,
       order_id,
+      result_url: 'https://smisyuk4.github.io/payment-services/liqpay',
+      server_url: 'https://payment-server-node.onrender.com/callback',
     })
   );
 
