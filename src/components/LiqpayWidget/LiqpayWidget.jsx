@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DivStyled, CartValue, LiqPayWindow } from './LiqpayWidget.styled';
 import { makeValues } from '../../helpers/liqpay';
+// import { makeValues } from '../../helpers/test';
 
 export const LiqpayWidget = () => {
   // const [payInfo, setPayInfo] = useState({ amount: 1, description: 'test' });
