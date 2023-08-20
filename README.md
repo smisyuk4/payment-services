@@ -12,6 +12,7 @@
 - [video pithon](https://www.youtube.com/watch?v=P6kZQHvHsPU&ab_channel=Eduard_B)
 - [repository python](https://github.com/Eduard-Bor/Liqpay_API_integration)
 - [repository](https://github.com/Gelan007/Gymby-frontend/blob/1a532cb026bb800a73adf4d2edfa0cdb1ec685ea/gymby-main-frontend-app/src/redux/reducers/subscription.js)
+- [repository react](https://github.com/cezerin/cezerin/blob/af73bdbeb17ae75f0db9e59d092b5e9b90bbe511/theme/src/components/checkoutForm/paymentForm/LiqPay.js#L33)
 
 - [invoice_bot](https://www.liqpay.ua/documentation/api/invoice_bot)
 - [checkout](https://www.liqpay.ua/documentation/api/aquiring/checkout)
