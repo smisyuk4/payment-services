@@ -7,6 +7,8 @@ const MonobankPage = lazy(() => import('../../pages/MonobankPage'));
 const LiqpayPage = lazy(() => import('../../pages/LiqpayPage'));
 const PaypalPage = lazy(() => import('../../pages/PaypalPage'));
 const WayforpayPage = lazy(() => import('../../pages/WayforpayPage'));
+const StripePage = lazy(() => import('../../pages/StripePage'));
+
 
 // import { DivStyled } from './App.styled';
 
@@ -20,6 +22,7 @@ export const App = () => {
           <Route path="liqpay" element={<LiqpayPage />} />
           <Route path="paypal" element={<PaypalPage />} />
           <Route path="wayforpay" element={<WayforpayPage />} />
+          <Route path="stripe" element={<StripePage />} />
         </Route>
       </Routes>
     </Suspense>

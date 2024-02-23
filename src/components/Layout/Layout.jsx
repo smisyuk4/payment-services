@@ -1,40 +1,50 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import { Container, UlStyled } from './Layout.styled';
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Container, UlStyled } from "./Layout.styled";
+
+const links = [
+  {
+    path: "/",
+    text: "Home",
+  },
+  {
+    path: "/monobank",
+    text: "Monobank",
+  },
+  {
+    path: "/liqpay",
+    text: "Liqpay",
+  },
+  {
+    path: "/paypal",
+    text: "Paypal",
+  },
+  {
+    path: "/wayforpay",
+    text: "Wayforpay",
+  },
+  {
+    path: "/stripe",
+    text: "Stripe",
+  },
+];
 
 export const Layout = () => {
   return (
     <>
       <header>
         <UlStyled>
-          <li>
-            <NavLink to="/" aria-label="home">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/monobank" aria-label="monobank">
-              Monobank
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/liqpay" aria-label="liqpay">
-              Liqpay
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/paypal" aria-label="paypal">
-              Paypal
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/wayforpay" aria-label="wayforpay">
-              Wayforpay
-            </NavLink>
-          </li>
+          {links.map(({ path, text }, idx) => (
+            <li key={idx}>
+              <NavLink to={path} aria-label={text}>
+                {text}
+              </NavLink>
+            </li>
+          ))}
         </UlStyled>
       </header>
+
       <main>
         <Suspense fallback={<p>Loading....</p>}>
           <Container>
