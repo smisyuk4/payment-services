@@ -20,8 +20,8 @@
 - [errors](https://www.liqpay.ua/ru/documentation/api/errors)
 
 # lipay wiget
--[widget](https://www.liqpay.ua/documentation/api/aquiring/widget/doc)
--[repository](https://github.com/shpp/crowdfunding-platform-front/blob/769e959acd29805f7f49421df4738edb88f8f91f/site/components/CardDonateWithoutProject.js#L66)
+
+-[widget](https://www.liqpay.ua/documentation/api/aquiring/widget/doc) -[repository](https://github.com/shpp/crowdfunding-platform-front/blob/769e959acd29805f7f49421df4738edb88f8f91f/site/components/CardDonateWithoutProject.js#L66)
 
 # monobank
 
@@ -35,7 +35,12 @@
 # stripe
 
 - [stripe](https://payments.com.ua/stripe/)
-- []()
+- [extension firebase - stripe](https://extensions.dev/extensions/stripe/firestore-stripe-payments)
+- [payments/checkout](https://docs.stripe.com/payments/checkout)
+- [How Checkout works](https://docs.stripe.com/payments/checkout/how-checkout-works?payment-ui=embedded-form)
+- [Secret and publishable keys](https://docs.stripe.com/keys#obtain-api-keys)
+- [video - Set Up Subscription Payments with Stripe, Next.JS & Firebase!](https://www.youtube.com/watch?v=P0Udy2Gi7n8&ab_channel=JarrodWatts)
+- [video - Firebase Stripe Extension WALKTHROUGH | How to use Firebase Stripe Subscription Extension](https://www.youtube.com/watch?v=5rc0pe2qRjg&ab_channel=SmallBatchDevs)
 
 # other
 
