@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { Elements } from "@stripe/react-stripe-js";
 
-import { stripePromise } from "../helpers/initialStripe";
 import { auth } from "../firebase/firebase.config";
 import {
   addOrder,
   authSignUpProvider,
   authSignOutUser,
 } from "../firebase/services";
+import { Stripe } from "../components/Stripe";
 import { Title } from "./pagesStyles";
-//uid "ruE1OaPLLTUii83e88ZFapv25Om2"
 
 const StripePage = () => {
   const [user, setUser] = useState({});
@@ -52,11 +50,6 @@ const StripePage = () => {
     }
   };
 
-  const handleClickSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target[0].value);
-  };
-
   return (
     <>
       <Title>StripePage</Title>
@@ -91,16 +84,7 @@ const StripePage = () => {
         addOrder
       </button> */}
 
-      <Elements stripe={stripePromise}>
-        <form onSubmit={handleClickSubmit}>
-          <label>
-            count
-            <input />
-          </label>
-
-          <button aria-label="submit button">submit</button>
-        </form>
-      </Elements>
+      <Stripe />
     </>
   );
 };
