@@ -23,8 +23,8 @@ export const Stripe = () => {
 
   return (
     <Elements stripe={stripePromise} options={options}>
-      {/* <CheckoutForm /> */}
-      <CheckoutPage />
+      <CheckoutForm />
+      {/* <CheckoutPage /> */}
     </Elements>
   );
 };
