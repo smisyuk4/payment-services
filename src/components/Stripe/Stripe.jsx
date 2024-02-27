@@ -1,30 +1,49 @@
+import { useEffect, useState } from "react";
 import { Elements } from "@stripe/react-stripe-js";
+import axios from "axios";
 
+const { VITE_SERVER_PATH } = import.meta.env;
 import { stripePromise } from "../../helpers/initialStripe";
 import { CheckoutForm } from "./CheckoutForm";
-import { CheckoutPage } from "./CheckoutPage";
 
 export const Stripe = () => {
-  // const options = {
-  //   // passing the client secret obtained from the server
-  //   clientSecret:
-  //     "sk_test_51OnGV5JF21XZFnxLrOxbGhBFs5YQ1VSUjyR3OZwDtgLzRL9uzIFsAYXTZiocKbrHYTChBd0oyHzysJiSx9Jh3bCb00izspcyFt",
-  // };
+  const [clientSecret, setClientSecret] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.post(
+          `${VITE_SERVER_PATH}/create-payment-intent`,
+          { items: 10 }
+        );
+        console.log(data);
+        if (data?.clientSecret) {
+          setClientSecret(data.clientSecret);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const appearance = {
+    theme: "stripe",
+  };
 
   const options = {
-    mode: "payment",
-    amount: 1099,
-    currency: "usd",
-    // Fully customizable with appearance API.
-    appearance: {
-      /*...*/
-    },
+    clientSecret,
+    appearance,
   };
 
   return (
-    <Elements stripe={stripePromise} options={options}>
-      <CheckoutForm />
-      {/* <CheckoutPage /> */}
-    </Elements>
+    <>
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
+      )}
+    </>
   );
 };
