@@ -1,14 +1,14 @@
-import { Route, Routes } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-const Layout = lazy(() => import('../Layout'));
-const HomePage = lazy(() => import('../../pages/HomePage'));
-const MonobankPage = lazy(() => import('../../pages/MonobankPage'));
-const LiqpayPage = lazy(() => import('../../pages/LiqpayPage'));
-const PaypalPage = lazy(() => import('../../pages/PaypalPage'));
-const WayforpayPage = lazy(() => import('../../pages/WayforpayPage'));
-const StripePage = lazy(() => import('../../pages/StripePage'));
-
+const Layout = lazy(() => import("../Layout"));
+const HomePage = lazy(() => import("../../pages/HomePage"));
+const MonobankPage = lazy(() => import("../../pages/MonobankPage"));
+const LiqpayPage = lazy(() => import("../../pages/LiqpayPage"));
+const PaypalPage = lazy(() => import("../../pages/PaypalPage"));
+const WayforpayPage = lazy(() => import("../../pages/WayforpayPage"));
+const StripePage = lazy(() => import("../../pages/StripePage"));
+const SuccessPaymentPage = lazy(() => import("../../pages/SuccessPaymentPage"));
 
 // import { DivStyled } from './App.styled';
 
@@ -23,6 +23,7 @@ export const App = () => {
           <Route path="paypal" element={<PaypalPage />} />
           <Route path="wayforpay" element={<WayforpayPage />} />
           <Route path="stripe" element={<StripePage />} />
+          <Route path="paymentSuccess" element={<SuccessPaymentPage />} />
         </Route>
       </Routes>
     </Suspense>

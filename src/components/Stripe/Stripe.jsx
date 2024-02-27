@@ -16,7 +16,7 @@ export const Stripe = () => {
           `${VITE_SERVER_PATH}/create-payment-intent`,
           { items: 10 }
         );
-        console.log(data);
+
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
         }
