@@ -6,6 +6,14 @@ const { VITE_SERVER_PATH } = import.meta.env;
 import { stripePromise } from "../../helpers/initialStripe";
 import { CheckoutForm } from "./CheckoutForm";
 
+const updatedArray = [
+  {
+    countInCart: 2,
+    id: "-RiY7",
+  },
+  { countInCart: 1, id: "8fwPc" },
+]; //total cost 500
+
 export const Stripe = () => {
   const [clientSecret, setClientSecret] = useState("");
 
@@ -14,8 +22,10 @@ export const Stripe = () => {
       try {
         const { data } = await axios.post(
           `${VITE_SERVER_PATH}/create-payment-intent`,
-          { items: 10 }
+          // { items: 10 }
+          { updatedArray }
         );
+        console.log(data);
 
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
