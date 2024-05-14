@@ -1,36 +1,33 @@
 import { md5 } from "js-md5";
 import axios from "axios";
 import { useEffect, useState } from "react";
-//const {
-//  WAY_FOR_PAY_URL,
-//  MERCHANT_DOMAIN_NAME,
-//  MERCHANT_ACCOUNT,
-//  MERCHANT_SECRET_KEY,
-//} = import.meta.env;
-
 import { DivStyled } from "./WayforpayWidget.styled";
-
-const signatureObj = {
-  merchantAccount: "furycomics_com_ua1",
-  merchantDomainName: "https://furycomics.com.ua/",
-  orderReference: "00004", //Унікальний номер invoice в системі торговця
-  orderDate: 1421412898,
-  amount: 1,
-  currency: "UAH",
-  productName: ["Samsung 0004"],
-  productCount: [1],
-  productPrice: [1],
-};
-
-const signatureString = Object.values(signatureObj).flat().join(";");
-console.log(signatureString);
-const hash = md5.hmac(
-  "86f70a395cde261129ecd7b1929d8373a575fc5f",
-  signatureString
-);
-console.log(hash);
+const {
+  VITE_WAY_FOR_PAY_URL,
+  VITE_MERCHANT_ACCOUNT,
+  VITE_MERCHANT_DOMAIN_NAME,
+  VITE_MERCHANT_SECRET_KEY,
+} = import.meta.env;
 
 export const WayforpayWidget = () => {
+  const signatureObj = {
+    merchantAccount: VITE_MERCHANT_ACCOUNT,
+    merchantDomainName: VITE_MERCHANT_DOMAIN_NAME,
+    orderReference: "00004", //Унікальний номер invoice в системі торговця
+    orderDate: 1421412898,
+    amount: 1,
+    currency: "UAH",
+    productName: ["Samsung 0004"],
+    productCount: [1],
+    productPrice: [1],
+  };
+  console.log(signatureObj);
+
+  const signatureString = Object.values(signatureObj).flat().join(";");
+  console.log(signatureString);
+  const hash = md5.hmac(VITE_MERCHANT_SECRET_KEY, signatureString);
+  console.log(hash);
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,7 +39,7 @@ export const WayforpayWidget = () => {
       merchantSignature: hash,
     };
 
-    fetch("https://secure.wayforpay.com/pay", {
+    fetch(VITE_WAY_FOR_PAY_URL, {
       method: "POST",
       body: JSON.stringify(body),
     })
