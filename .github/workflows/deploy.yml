@@ -48,6 +48,10 @@ jobs:
           VITE_MESSAGING_SENDDER_ID: ${{  vars.VITE_MESSAGING_SENDDER_ID  }}
           VITE_APP_ID: ${{  vars.VITE_APP_ID  }}
           VITE_STRIPE_PUBLIC_KEY: ${{  vars.VITE_STRIPE_PUBLIC_KEY  }}
+          VITE_WAY_FOR_PAY_URL: ${{  vars.VITE_WAY_FOR_PAY_URL  }}
+          VITE_MERCHANT_DOMAIN_NAME: ${{  vars.VITE_MERCHANT_DOMAIN_NAME  }}
+          VITE_MERCHANT_ACCOUNT: ${{  vars.VITE_MERCHANT_ACCOUNT  }}
+          VITE_MERCHANT_SECRET_KEY: ${{  vars.VITE_MERCHANT_SECRET_KEY  }}
 
         run: npm run build
       - name: Copy index.html to 404.html
