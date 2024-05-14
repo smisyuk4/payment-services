@@ -41,6 +41,7 @@ export const WayforpayWidget = () => {
 
     fetch(VITE_WAY_FOR_PAY_URL, {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(body),
     })
       .then((e) => e.json())
