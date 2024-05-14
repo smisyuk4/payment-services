@@ -1,9 +1,12 @@
-import { Title } from './pagesStyles'
+import { Title } from "./pagesStyles";
+import { WayforpayWidget } from "../components/WayforpayWidget";
 
 const WayforpayPage = () => {
   return (
     <>
       <Title>WayforpayPage</Title>
+
+      <WayforpayWidget />
     </>
   );
 };

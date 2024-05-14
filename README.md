@@ -1,5 +1,9 @@
+## Платіжний віджет
+
 - [wayforpay](https://wayforpay.com/en)
-- [LiqPay and PayPal](https://github.com/Cezerin2/cezerin2-store/blob/74d43515f5b6e73c4e77ee29c7da96e764ce85d0/theme/src/components/checkoutForm/paymentForm/LiqPay.js#L29)
+- [Платіжний віджет](https://wiki.wayforpay.com/view/852091)
+- [Приняти платіж (Purchase)](https://wiki.wayforpay.com/view/852102)
+- [example react](https://github.com/qualitypaper/forsbrand-frontend/blob/8079a10ddf92911c05092ebf49de4199e064c600/src/pages/Payment.jsx#L66)
 
 # liqpay
 
@@ -46,3 +50,4 @@
 
 - [How can you encode a string to Base64 in JavaScript](https://stackoverflow.com/questions/246801/how-can-you-encode-a-string-to-base64-in-javascript)
 - [Converting HTML string into DOM elements?](https://stackoverflow.com/questions/3103962/converting-html-string-into-dom-elements)
+- [LiqPay and PayPal](https://github.com/Cezerin2/cezerin2-store/blob/74d43515f5b6e73c4e77ee29c7da96e764ce85d0/theme/src/components/checkoutForm/paymentForm/LiqPay.js#L29)

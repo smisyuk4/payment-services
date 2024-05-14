@@ -1,23 +1,23 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 const { VITE_LIQPAY_PRIVATE_KEY, VITE_LIQPAY_PUBLIC_KEY } = import.meta.env;
 
 export const makeValues = async (amount, description) => {
   const order_id = uuidv4();
-  console.log('makeValues order_id =>>>>> ', order_id);
-  console.log('description', description);
+  console.log("makeValues order_id =>>>>> ", order_id);
+  console.log("description", description);
 
   const dataBase64 = btoa(
     JSON.stringify({
-      version: '3',
+      version: "3",
       public_key: VITE_LIQPAY_PUBLIC_KEY,
-      action: 'pay',
+      action: "pay",
       amount,
-      currency: 'UAH',
+      currency: "UAH",
       description,
       //   description: btoa(unescape(encodeURIComponent(description))), //  'utf-8'
       order_id,
-      result_url: 'https://smisyuk4.github.io/payment-services/liqpay',
-      server_url: 'https://payment-server-node.onrender.com/callback',
+      result_url: "https://smisyuk4.github.io/payment-services/liqpay",
+      server_url: "https://payment-server-node.onrender.com/callback",
     })
   );
   //   console.log(
@@ -35,7 +35,7 @@ export const makeValues = async (amount, description) => {
   concatenatedBuffer.set(keyBuffer, keyBuffer.length + dataBuffer.length);
 
   const hashBuffer = await window.crypto.subtle.digest(
-    'SHA-1',
+    "SHA-1",
     concatenatedBuffer
   );
   const signatureBase64 = btoa(
