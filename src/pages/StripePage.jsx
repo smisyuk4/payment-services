@@ -76,7 +76,7 @@ const StripePage = () => {
 
       <div style={{ margin: "20px 0", border: "1px solid black" }}></div>
 
-      <Stripe />
+      {/*<Stripe />*/}
     </>
   );
 };
