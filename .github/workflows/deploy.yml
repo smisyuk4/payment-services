@@ -48,6 +48,7 @@ jobs:
           VITE_MESSAGING_SENDDER_ID: ${{  vars.VITE_MESSAGING_SENDDER_ID  }}
           VITE_APP_ID: ${{  vars.VITE_APP_ID  }}
           VITE_STRIPE_PUBLIC_KEY: ${{  vars.VITE_STRIPE_PUBLIC_KEY  }}
+          VITE_SERVER_API: ${{  vars.VITE_SERVER_API  }}
           VITE_WAY_FOR_PAY_URL: ${{  vars.VITE_WAY_FOR_PAY_URL  }}
           VITE_MERCHANT_DOMAIN_NAME: ${{  vars.VITE_MERCHANT_DOMAIN_NAME  }}
           VITE_MERCHANT_ACCOUNT: ${{  vars.VITE_MERCHANT_ACCOUNT  }}
