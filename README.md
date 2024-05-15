@@ -4,6 +4,7 @@
 - [Платіжний віджет](https://wiki.wayforpay.com/view/852091)
 - [Приняти платіж (Purchase)](https://wiki.wayforpay.com/view/852102)
 - [example react](https://github.com/qualitypaper/forsbrand-frontend/blob/8079a10ddf92911c05092ebf49de4199e064c600/src/pages/Payment.jsx#L66)
+- [converter to MD5](https://www.npmjs.com/package/js-md5)
 
 # liqpay
 
