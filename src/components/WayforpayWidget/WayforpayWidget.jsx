@@ -17,7 +17,8 @@ export const WayforpayWidget = () => {
   useEffect(() => {
     const listenPaymentResult = (event) => {
       if (event.data == "WfpWidgetEventApproved") {
-        navigate("/");
+        //navigate("/");
+        console.log("event ", event);
       }
     };
     window.addEventListener("message", listenPaymentResult, false);
@@ -28,7 +29,7 @@ export const WayforpayWidget = () => {
   const signatureObj = {
     merchantAccount: VITE_MERCHANT_ACCOUNT,
     merchantDomainName: VITE_MERCHANT_DOMAIN_NAME,
-    orderReference: "00008",
+    orderReference: "00010",
     orderDate: 1421412898,
     amount: 1,
     currency: "UAH",
@@ -54,9 +55,12 @@ export const WayforpayWidget = () => {
         {
           ...signatureObj,
           merchantAuthType: "SimpleSignature",
-          serviceUrl: "https://test-server/payment-status",
           merchantSignature: hash,
           //requestType: "VERIFY", //виконання верифікації карти в віджеті
+          language: "AUTO",
+          returnUrl: "",
+          serviceUrl: "https://test-server/payment-status",
+          deliveryList: "nova;ukrpost;other",
         },
         function (response) {
           // on approved
